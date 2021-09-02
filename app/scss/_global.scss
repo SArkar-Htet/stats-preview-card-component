@@ -14,13 +14,15 @@ body {
   line-height: 1.3;
   font-family: 'Inter', sans-serif;
   font-size: 0.9375rem;
-  height: 100vh;
   background-color: $veryDarkBlue;
   font-weight: 400;
-
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  @include breakpoint-up(medium) {
+    height: 100vh;
+  }
 
   h1, h2, h3, h4, h5, h6, p {
     margin: 0;
