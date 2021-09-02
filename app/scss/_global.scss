@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.9375rem;
+
+  .font-bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: $font-bold;
+  }
+}
