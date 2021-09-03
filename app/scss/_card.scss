@@ -1,15 +1,28 @@
 .card {
-  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: $darkDesaturatedBlue;
+  max-width: 70rem;
   border-radius: 0.625rem;
   overflow: hidden;
   
   @include breakpoint-down(small) {
     margin: 20% auto;
+    width: 90%;
+  }
+  
+  @include breakpoint-up(medium) {
+    flex-direction: row;
   }
 
   &__header {
     position: relative;
+    @include breakpoint-up(medium) {
+      flex: 1;
+      order: 2;
+    }
     img {
       width: 100%;
       vertical-align: middle;
@@ -25,8 +38,20 @@
     }
   }
 
+  &-content {
+    @include breakpoint-up(medium) {
+      flex: 1;
+      order: 1;
+    }
+  }
+
   &__body {
     text-align: center;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+      max-width: 390px;
+    }
   }
 
   &__title {
@@ -34,6 +59,10 @@
     color: $white;
     .highlight {
       color: $softViolet;
+    }
+
+    @include breakpoint-up(medium) {
+      font-size: 37px;
     }
   }
 
@@ -48,11 +77,25 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
     .stats {
       text-align: center;
       padding-top: 20px;
       padding-bottom: 10px;
       line-height: 1.5;
+
+      @include breakpoint-up(medium) {
+        text-align: left;
+
+        &:not(:last-child) {
+          padding-right: 60px;
+        }
+      }
+
       span {
         display: block;
       }
