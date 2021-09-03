@@ -8,18 +8,22 @@
   border-radius: 0.625rem;
   overflow: hidden;
   
+  @include breakpoint-down(medium) {
+    width: 70%;
+  }
+
   @include breakpoint-down(small) {
     margin: 20% auto;
     width: 90%;
   }
   
-  @include breakpoint-up(medium) {
+  @include breakpoint-up(large) {
     flex-direction: row;
   }
 
   &__header {
     position: relative;
-    @include breakpoint-up(medium) {
+    @include breakpoint-up(large) {
       flex: 1;
       order: 2;
     }
@@ -39,7 +43,7 @@
   }
 
   &-content {
-    @include breakpoint-up(medium) {
+    @include breakpoint-up(large) {
       flex: 1;
       order: 1;
     }
@@ -49,8 +53,11 @@
     text-align: center;
 
     @include breakpoint-up(medium) {
-      text-align: left;
       max-width: 390px;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: left;
     }
   }
 
@@ -78,7 +85,7 @@
     justify-content: center;
     align-items: center;
 
-    @include breakpoint-up(medium) {
+    @include breakpoint-up(large) {
       flex-direction: row;
       justify-content: flex-start;
     }
@@ -88,7 +95,7 @@
       padding-bottom: 10px;
       line-height: 1.5;
 
-      @include breakpoint-up(medium) {
+      @include breakpoint-up(large) {
         text-align: left;
 
         &:not(:last-child) {
